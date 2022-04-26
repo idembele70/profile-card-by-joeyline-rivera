@@ -15,7 +15,7 @@ const Container = styled.div`
 const CardContainer = styled.div`
   max-width: 541px;
   width: 95vw;
-  max-height: 717px;
+  position: relative;
   background: #ffffff;
   box-shadow: 0px 4px 75px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
@@ -29,30 +29,16 @@ const Logo = styled.div`
   margin-left: 22px;
   margin-top: 22px;
 `;
-
 const Avatar = styled.div`
-  height: 204px;
-  width: 204px;
-  background-image: url(${process.env.PUBLIC_URL}/assets/avatar.png);
+  height: 230px;
+  width: 220px;
+  background-image: url(${process.env.PUBLIC_URL}/assets/avatarWEllipse.png);
   background-repeat: no-repeat;
   background-position: center;
   align-self: center;
   position: relative;
   margin-top: 10px;
-  margin-bottom: 32px;
-  ::after {
-    content: "";
-    position: absolute;
-    border-top: 5px solid #f7df1e;
-    border-right: 5px solid #f7df1e;
-    border-bottom: 5px solid #f7df1e;
-    border-left: 5px solid transparent;
-    width: 215px;
-    height: 215px;
-    top: -12px;
-    right: -8px;
-    border-radius: 50%;
-  }
+  margin-bottom: 12px;
 `;
 const Info = styled.div`
   width: 90%;
@@ -85,20 +71,22 @@ const Bio = styled.p`
 const Email = styled.h3`
   font-weight: 400;
   font-size: 20px;
-  line-height: 44px;
-  text-align: center;
   color: #ffffff;
   background-color: #26235c;
-  width: 90%;
+  width: 95%;
   max-width: 330px;
   align-self: center;
   border-radius: 10px;
   margin-bottom: 45px;
+  word-break: break-all;
+  padding: 12px 0;
+  text-align: center;
 `;
 const SocialIconContainer = styled.div`
   align-self: center;
   display: flex;
   column-gap: 24px;
+  row-gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -107,6 +95,11 @@ const SocialIconContainer = styled.div`
   margin-bottom: 87px;
 `;
 const SocialIcon = styled.img``;
+const Footer = styled.img`
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+`;
 function Card() {
   const socialIconsName = [
     "twitter",
@@ -138,6 +131,7 @@ function Card() {
             />
           ))}
         </SocialIconContainer>
+        <Footer src={`${process.env.PUBLIC_URL}/assets/rectangle.png`} />
       </CardContainer>
     </Container>
   );
