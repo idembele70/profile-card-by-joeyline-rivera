@@ -2,15 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100vw;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 50px;
-  background-color: #d5c6ff;
-  font-family: "lato", "Courier New", Courier, monospace;
-  font-style: normal;
+  margin-bottom: 20px;
 `;
 const CardContainer = styled.div`
   max-width: 541px;
