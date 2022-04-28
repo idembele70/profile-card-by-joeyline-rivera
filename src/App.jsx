@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "reset-css";
 import styled from "styled-components";
-import Card from "./components/Card";
+import DarkCard from "./components/DarkCard";
+import LightCard from "./components/LightCard";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import { Theme$ } from "./util";
 
 const Container = styled.div`
   width: 100vw;
@@ -17,10 +19,18 @@ const Container = styled.div`
 `;
 
 function App() {
+  const [lightTheme, setLightTheme] = useState(false);
+  useEffect(() => {
+    const themeObserver = Theme$.subscribe((t) => setLightTheme(t));
+
+    return () => {
+      themeObserver.unsubscribe();
+    };
+  }, []);
   return (
     <Container>
       <ThemeSwitcher />
-      <Card />
+      {lightTheme ? <LightCard /> : <DarkCard />}
     </Container>
   );
 }

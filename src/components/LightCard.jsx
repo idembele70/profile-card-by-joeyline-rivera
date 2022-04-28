@@ -20,7 +20,7 @@ const CardContainer = styled.div`
 const Logo = styled.div`
   height: 40px;
   width: 40px;
-  background-image: url(${process.env.PUBLIC_URL}/assets/logo.png);
+  background-image: url(${process.env.PUBLIC_URL}/assets/lightTheme/logo.png);
   margin-left: 22px;
   margin-top: 22px;
 `;
@@ -95,7 +95,7 @@ const Footer = styled.img`
   width: 100%;
   bottom: 0;
 `;
-function Card() {
+function LightCard() {
   const socialIconsName = [
     "twitter",
     "instagram",
@@ -121,15 +121,17 @@ function Card() {
         <SocialIconContainer>
           {socialIconsName.map((iconName) => (
             <SocialIcon
-              src={`${process.env.PUBLIC_URL}/assets/${iconName}Icon.png`}
+              src={`${process.env.PUBLIC_URL}/assets/lightTheme/${iconName}Icon.png`}
               alt={iconName}
             />
           ))}
         </SocialIconContainer>
-        <Footer src={`${process.env.PUBLIC_URL}/assets/rectangle.png`} />
+        <Footer
+          src={`${process.env.PUBLIC_URL}/assets/lightTheme/rectangle.png`}
+        />
       </CardContainer>
     </Container>
   );
 }
 
-export default Card;
+export default LightCard;

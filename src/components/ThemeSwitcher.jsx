@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Theme$ } from "../util";
 
 const Container = styled.div`
   width: 95vw;
   max-width: 343px;
   height: 136px;
-  background-color: ${(props) => (props.color ? "#dacdcd" : "#5F3333")};
+  background: ${(props) => (props.color ? "#dacdcd" : "#5F3333")};
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), inset 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 139px;
   position: relative;
   margin-top: 20px;
   transition: background 340ms linear;
+  cursor: pointer;
 `;
 const Button = styled.div`
   position: absolute;
@@ -46,35 +48,23 @@ const ButtonLabel = styled.div`
   opacity: ${(props) => props.opacity};
   mix-blend-mode: normal;
   border-radius: 100px;
-  cursor: pointer;
-  transition: all 340ms linear;
-  z-index: ${(props) => props.zIndex};
 `;
 
 function ThemeSwitcher() {
-  const [lightTheme, setLigthTheme] = useState(false);
+  const [lightTheme, setLigthTheme] = useState(true);
   const handleChangeTheme = (e) => {
+    const newTheme = !lightTheme;
     e.preventDefault();
-    setLigthTheme(!lightTheme);
+    setLigthTheme(newTheme);
+    Theme$.next(newTheme);
   };
   return (
-    <Container color={lightTheme}>
+    <Container color={lightTheme} onClick={handleChangeTheme}>
       <Button color={lightTheme} />
-      <ButtonLabel
-        left
-        color={lightTheme}
-        onClick={handleChangeTheme}
-        opacity={lightTheme ? 1 : 0}
-        zIndex={lightTheme ? "auto" : -1}
-      >
+      <ButtonLabel left color={lightTheme} opacity={lightTheme ? 1 : 0}>
         ON
       </ButtonLabel>
-      <ButtonLabel
-        color={!lightTheme}
-        onClick={handleChangeTheme}
-        opacity={lightTheme ? 0 : 1}
-        zIndex={lightTheme ? -1 : "auto"}
-      >
+      <ButtonLabel color={!lightTheme} opacity={lightTheme ? 0 : 1}>
         OFF
       </ButtonLabel>
     </Container>
