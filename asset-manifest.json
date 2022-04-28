@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/idembele70/profile-card-by-joeyline-rivera/static/css/main.cf506294.css",
+    "main.js": "/idembele70/profile-card-by-joeyline-rivera/static/js/main.7d2f2e67.js",
+    "index.html": "/idembele70/profile-card-by-joeyline-rivera/index.html",
+    "main.cf506294.css.map": "/idembele70/profile-card-by-joeyline-rivera/static/css/main.cf506294.css.map",
+    "main.7d2f2e67.js.map": "/idembele70/profile-card-by-joeyline-rivera/static/js/main.7d2f2e67.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf506294.css",
+    "static/js/main.7d2f2e67.js"
+  ]
+}
