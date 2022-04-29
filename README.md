@@ -1,4 +1,8 @@
-### Build is Live there : [Click me](https://idembele70.github.io/profile-card-by-joeyline-rivera/)
+### Build is Live there : [CLICK ME](https://idembele70.github.io/profile-card-by-joeyline-rivera/)
+
+### This Project was designed by following joeline rivera design
+
+[DESIGN LINK](<https://www.figma.com/community/file/1093387738902555799/Profile-Card-(Community)>)
 
 # Getting Started with Create React App
 
