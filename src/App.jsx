@@ -7,7 +7,7 @@ import ThemeSwitcher from "./components/ThemeSwitcher";
 import { Theme$ } from "./util";
 
 const Container = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
   background-color: #d5c6ff;
   font-family: "lato", "Courier New", Courier, monospace;
@@ -15,7 +15,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 `;
 
 function App() {
